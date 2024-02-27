@@ -34,13 +34,22 @@ public class Simulator {
 
         while (count < rounds) {
             count++;
-
+// Every 100 rounds, a mouse is added to a random location in the city
+// Every 25 rounds, a cat is added to a random location in the city. 
+// To pass the unit tests, you must rely on the city’s getNextX() and 
+// getNextY() methods each time you need to generate these random X
+// and Y coordinates.
+//
+//
             //TODO...
-            //
             // Every N rounds, add a mouse
-            
+            if (count % 100 == 0) {
+                city.addMouse(city.getNextX(), city.getNextY());
+            }
             //Every M rounds, add a Cat
-
+            if (count % 25 == 0) {
+                city.addCat();
+            }
             //END TODO
             city.simulate();
             System.out.println("done " + count);

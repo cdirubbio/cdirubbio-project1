@@ -1,13 +1,11 @@
 import java.util.Random;
 
 public abstract class Creature {
-
-    
     // Note, that output should be in (x,y) format as
     // the plotter expects it in that format.
 
 
-    // dir: 0=North, 1=East, 2=South, 3=West.
+  // dir: 0=North, 1=East, 2=South, 3=West.
     // 
     //
     //
@@ -97,8 +95,27 @@ public abstract class Creature {
     }
 
     //BEGIN TODO: any additional methods you may need
-    //step()
+   // dir: 0=North, 1=East, 2=South, 3=West.
+    public void step() {
+        if (dir == 0) {
+            point.x += 0;
+            point.y += -1;
+        }
+        else if (dir == 1) {
+            point.x += 1;
+            point.y += 0;
+        }
+        else if (dir == 2) {
+            point.x += 0;
+            point.y += 1;
+        }
+        else if (dir == 3) {
+            point.x += -1;
+            point.y += 0;
+        }
+    }
     //takeAction();
+    public abstract void takeAction();
     //END TODO
 
 
