@@ -1,5 +1,5 @@
 import java.util.Random;
-
+import java.lang.Math;
 public abstract class Creature {
     // Note, that output should be in (x,y) format as
     // the plotter expects it in that format.
@@ -47,6 +47,14 @@ public abstract class Creature {
 
     //current direction facing
     private int dir;
+    // setter
+    public void setDir(int newDir) {
+        this.dir = newDir;
+    }
+  
+    public int getDir() {
+        return this.dir;
+    }
 
     //current point in grid
     private GridPoint point;
@@ -95,23 +103,21 @@ public abstract class Creature {
     }
 
     //BEGIN TODO: any additional methods you may need
-   // dir: 0=North, 1=East, 2=South, 3=West.
     public void step() {
-        if (dir == 0) {
-            point.x += 0;
-            point.y += -1;
+       point.x += dirX[dir] * stepLen;
+       point.y += dirY[dir] * stepLen;
+       
+        if (point.x < 0){ 
+            point.x = city.WIDTH - Math.abs(point.x);
         }
-        else if (dir == 1) {
-            point.x += 1;
-            point.y += 0;
+        if (point.y < 0){ 
+            point.y = city.HEIGHT - Math.abs(point.y);
         }
-        else if (dir == 2) {
-            point.x += 0;
-            point.y += 1;
+        if (point.x >= city.WIDTH) {
+            point.x = Math.abs(point.x) - city.WIDTH;
         }
-        else if (dir == 3) {
-            point.x += -1;
-            point.y += 0;
+        if (point.y >= city.HEIGHT){ 
+            point.y =Math.abs(point.y) -  city.HEIGHT;
         }
     }
     //takeAction();
