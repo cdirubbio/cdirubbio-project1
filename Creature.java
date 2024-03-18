@@ -117,7 +117,7 @@ public abstract class Creature {
             point.x = Math.abs(point.x) - city.WIDTH;
         }
         if (point.y >= city.HEIGHT){ 
-            point.y =Math.abs(point.y) -  city.HEIGHT;
+            point.y = Math.abs(point.y) -  city.HEIGHT;
         }
     }
     //takeAction();

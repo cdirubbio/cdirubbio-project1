@@ -35,7 +35,6 @@ public class City{
 
 
 
-
     //-------------------------------------
     //The simulation's Data Structures
     //

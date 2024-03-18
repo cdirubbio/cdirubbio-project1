@@ -14,7 +14,7 @@ public class Cat extends Creature {
     //
     //
     //
-    //
+    // 
 
     private int movesSinceMouseEaten = 1;
     private Mouse targetMouse;
@@ -26,15 +26,13 @@ public class Cat extends Creature {
     }
 
     public void takeAction() {
-        if (dead == true)
-            return;
+        if (dead == true) return;
         checkToEat();
         findClosestMouse();
 
         if (targetMouse != null) {
             dirToTarget(targetMouse);
         }
-
     }
 
     public void step() {
@@ -134,5 +132,4 @@ public class Cat extends Creature {
             this.randomTurn();
         }
     }
-
 }
